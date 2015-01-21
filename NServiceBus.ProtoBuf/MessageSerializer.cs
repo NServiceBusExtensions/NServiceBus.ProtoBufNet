@@ -4,6 +4,7 @@
     using System.Collections.Generic;
     using System.IO;
     using global::ProtoBuf;
+    using global::ProtoBuf.Meta;
     using NServiceBus.Serialization;
 
     /// <summary>
@@ -11,7 +12,6 @@
     /// </summary>
     public class MessageSerializer : IMessageSerializer
     {
-        
         /// <summary>
         /// <see cref="IMessageSerializer.Serialize"/>
         /// </summary>
@@ -35,11 +35,8 @@
             {
                 throw new Exception("Batch messages are not supported.");                
             }
-
-            var method = typeof(Serializer).GetMethod("Deserialize");
-            method = method.MakeGenericMethod(messageTypes[0]);
-            var invoke = method.Invoke(this, new object[] { stream });
-            return new []{ invoke};
+            var message = RuntimeTypeModel.Default.Deserialize(stream, null, messageTypes[0]);
+            return new[]{ message};
         }
 
         /// <summary>
@@ -51,4 +48,5 @@
         }
 
     }
+
 }

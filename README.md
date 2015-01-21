@@ -20,4 +20,4 @@ busConfig.UseSerialization<ProtoBufSerializer>();
 
 ## Icon
 
-<a href="http://thenounproject.com/term/robot/10415/" target="_blank">RobotLog</a> designed by <a href="http://thenounproject.com/Soto/" target="_blank">Sotirios Papavasilopoulos</a> from The Noun Project
+<a href="http://thenounproject.com/term/robot/10415/" target="_blank">Robot</a> designed by <a href="http://thenounproject.com/Soto/" target="_blank">Sotirios Papavasilopoulos</a> from The Noun Project

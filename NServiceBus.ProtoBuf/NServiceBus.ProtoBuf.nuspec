@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <id>NServiceBus.ProtoBuf</id>
+    <version>$version$</version>
+    <title>NServiceBus.ProtoBuf</title>
+    <authors>Simon Cropp</authors>
+    <owners>Simon Cropp</owners>
+    <licenseUrl>http://www.opensource.org/licenses/mit-license.php</licenseUrl>
+    <projectUrl>http://github.com/SimonCropp/NServiceBus.ProtoBuf</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <iconUrl>https://raw.githubusercontent.com/SimonCropp/NServiceBus.ProtoBuf/master/Icon/package_icon.png</iconUrl>
+    <description>ProtoBuf integration for NServiceBus.</description>
+    <language>en-AU</language>
+    <tags>NServiceBus, ProtoBuf, Serialization</tags>
+	  <dependencies>
+      <dependency id="NServiceBus" version="[5.1.0, 6.0.0)" />
+      <dependency id="protobuf-net" version="[2.0.0.688, 3.0.0)" />
+	  </dependencies>
+  </metadata>
+</package>

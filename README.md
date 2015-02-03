@@ -5,9 +5,9 @@ NServiceBus.ProtoBuf
 
 Add support for [NServiceBus](http://particular.net/NServiceBus) message serialization via [ProtoBuf](https://code.google.com/p/protobuf-net/)
 
-## Nuget
+## The nuget package  [![NuGet Status](http://img.shields.io/nuget/v/NServiceBus.ProtoBuf.svg?style=flat)](https://www.nuget.org/packages/NServiceBus.ProtoBuf/)
 
-### http://nuget.org/packages/NServiceBus.ProtoBuf/
+https://nuget.org/packages/NServiceBus.ProtoBuf/
 
     PM> Install-Package NServiceBus.ProtoBuf
 

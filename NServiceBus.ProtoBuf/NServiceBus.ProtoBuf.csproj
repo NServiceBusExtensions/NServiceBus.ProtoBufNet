@@ -69,9 +69,9 @@
       <FilesToDelete Include="$(SolutionDir)NuGetBuildCodeOnly\**\*.*" />
     </ItemGroup>
     <Delete Files="@(FilesToDelete)" />
-    <Copy SourceFiles="$(OutputPath)NServiceBus.ProtoBuf.dll" DestinationFolder="$(SolutionDir)NuGetBuild\Lib\NET45" />
-    <Copy SourceFiles="$(OutputPath)NServiceBus.ProtoBuf.pdb" DestinationFolder="$(SolutionDir)NuGetBuild\Lib\NET45" />
-    <Copy SourceFiles="$(OutputPath)NServiceBus.ProtoBuf.xml" DestinationFolder="$(SolutionDir)NuGetBuild\Lib\NET45" />
+    <Copy SourceFiles="$(OutputPath)NServiceBus.ProtoBuf.dll" DestinationFolder="$(SolutionDir)NuGetBuild\Lib\NET452" />
+    <Copy SourceFiles="$(OutputPath)NServiceBus.ProtoBuf.pdb" DestinationFolder="$(SolutionDir)NuGetBuild\Lib\NET452" />
+    <Copy SourceFiles="$(OutputPath)NServiceBus.ProtoBuf.xml" DestinationFolder="$(SolutionDir)NuGetBuild\Lib\NET452" />
     <Copy SourceFiles="$(ProjectDir)NServiceBus.ProtoBuf.nuspec" DestinationFolder="$(SolutionDir)NuGetBuild" />
     <PepitaPackage.CreatePackageTask NuGetBuildDirectory="$(SolutionDir)NuGetBuild" MetadataAssembly="$(OutputPath)\NServiceBus.ProtoBuf.dll" />
   </Target>

@@ -3,6 +3,9 @@
 [TestFixture]
 public class Tests
 {
+    public Tests()
+    {
+    }
 
 
 }

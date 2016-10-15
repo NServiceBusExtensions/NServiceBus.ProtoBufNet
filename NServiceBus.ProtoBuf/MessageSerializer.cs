@@ -36,7 +36,7 @@ namespace NServiceBus.ProtoBuf
             var messageType = message.GetType();
             if (messageType.Name.EndsWith("__impl"))
             {
-                throw new Exception("Interface based message are not currently supported. Create a class that implements your desired interface. If you want to send an interface feel free to send a pull request.");
+                throw new Exception("Interface based message are not supported. Create a class that implements the desired interface.");
             }
 
             runtimeTypeModel.Serialize(stream, message);

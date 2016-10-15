@@ -15,7 +15,7 @@
     <tags>NServiceBus, ProtoBuf, Serialization</tags>
 	  <dependencies>
       <dependency id="NServiceBus" version="[6.0.0, 7.0.0)" />
-      <dependency id="protobuf-net" version="[2.2.0, 3.0.0)" />
+      <dependency id="protobuf-net" version="[2.1.0, 3.0.0)" />
 	  </dependencies>
   </metadata>
 </package>

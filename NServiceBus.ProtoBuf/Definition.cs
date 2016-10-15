@@ -1,7 +1,10 @@
-﻿namespace NServiceBus.ProtoBuf
+﻿using System;
+using NServiceBus.MessageInterfaces;
+using NServiceBus.Serialization;
+using NServiceBus.Settings;
+
+namespace NServiceBus.ProtoBuf
 {
-    using System;
-    using NServiceBus.Serialization;
 
     /// <summary>
     /// Defines the capabilities of the ProtoBuf serializer
@@ -9,12 +12,16 @@
     public class ProtoBufSerializer : SerializationDefinition
     {
         /// <summary>
-        /// <see cref="SerializationDefinition.ProvidedByFeature"/>
+        /// <see cref="SerializationDefinition.Configure"/>
         /// </summary>
-        protected override Type ProvidedByFeature()
+        public override Func<IMessageMapper, IMessageSerializer> Configure(ReadOnlySettings settings)
         {
-            return typeof(SerializationFeature);
+            return mapper =>
+            {
+                var runtimeTypeModel = settings.GetRuntimeTypeModel();
+                var contentTypeKey = settings.GetContentTypeKey();
+                return new MessageSerializer(contentTypeKey, runtimeTypeModel);
+            };
         }
     }
-
 }

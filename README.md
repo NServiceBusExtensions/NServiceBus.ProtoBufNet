@@ -13,12 +13,9 @@ https://nuget.org/packages/NServiceBus.ProtoBuf/
     PM> Install-Package NServiceBus.ProtoBuf
 
 
-## Usage
+## Documentation
 
-```
-var config = new EndpointConfiguration("EndpointName");
-config.UseSerialization<ProtoBufSerializer>();
-```
+https://docs.particular.net/nservicebus/serialization/protobuf
 
 
 ## Icon

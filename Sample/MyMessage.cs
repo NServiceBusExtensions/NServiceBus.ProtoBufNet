@@ -1,10 +1,9 @@
-﻿using System;
-using NServiceBus;
+﻿using NServiceBus;
 using ProtoBuf;
 
 [ProtoContract]
 public class MyMessage : IMessage
 {
     [ProtoMember(1)]
-    public DateTime DateSend { get; set; }
+    public string Name { get; set; }
 }

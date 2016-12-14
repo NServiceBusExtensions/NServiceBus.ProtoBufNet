@@ -23,9 +23,21 @@ class Program
         {
             var message = new MyMessage
             {
-                DateSend = DateTime.Now,
+                Name = "immediate",
             };
             await endpoint.SendLocal(message);
+
+            await endpoint.ScheduleEvery(
+                    timeSpan: TimeSpan.FromSeconds(5),
+                    task: pipelineContext =>
+                    {
+                        var delayed = new MyMessage
+                        {
+                            Name = "delayed",
+                        };
+                        return pipelineContext.SendLocal(delayed);
+                    })
+                .ConfigureAwait(false);
             Console.WriteLine("\r\nPress any key to stop program\r\n");
             Console.Read();
         }

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using NServiceBus.Serialization;
 using ProtoBuf.Meta;
 
@@ -39,12 +40,30 @@ namespace NServiceBus.ProtoBuf
                 throw new Exception("Interface based message are not supported. Create a class that implements the desired interface.");
             }
 
-            runtimeTypeModel.Serialize(stream, message);
+
+            var task = message as ScheduledTask;
+            if (task == null)
+            {
+                runtimeTypeModel.Serialize(stream, message);
+                return;
+            }
+
+            var wrapper = ScheduledTaskHelper.ToWrapper(task);
+            runtimeTypeModel.Serialize(stream, wrapper);
         }
 
         public object[] Deserialize(Stream stream, IList<Type> messageTypes)
         {
-            var message = runtimeTypeModel.Deserialize(stream, null, messageTypes[0]);
+
+            var messageType = messageTypes.First();
+            if (messageType.IsScheduleTask())
+            {
+                var scheduledTaskWrapper = (ScheduledTaskWrapper)runtimeTypeModel.Deserialize(stream, null, ScheduledTaskHelper.WrapperType);
+                var scheduledTask = ScheduledTaskHelper.FromWrapper(scheduledTaskWrapper);
+                return new[] { scheduledTask };
+            }
+
+            var message = runtimeTypeModel.Deserialize(stream, null, messageType);
             return new[]{ message};
         }
 

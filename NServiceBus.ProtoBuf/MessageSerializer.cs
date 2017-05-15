@@ -14,7 +14,7 @@ namespace NServiceBus.ProtoBuf
 
         public MessageSerializer(string contentType, RuntimeTypeModel runtimeTypeModel)
         {
-            if (contentType == null)
+            if (runtimeTypeModel == null)
             {
                 this.runtimeTypeModel = RuntimeTypeModel.Default;
             }
@@ -42,14 +42,16 @@ namespace NServiceBus.ProtoBuf
 
 
             var task = message as ScheduledTask;
-            if (task == null)
+            if (task != null)
+            {
+                var wrapper = ScheduledTaskHelper.ToWrapper(task);
+                runtimeTypeModel.Serialize(stream, wrapper);
+            }
+            else
             {
                 runtimeTypeModel.Serialize(stream, message);
                 return;
             }
-
-            var wrapper = ScheduledTaskHelper.ToWrapper(task);
-            runtimeTypeModel.Serialize(stream, wrapper);
         }
 
         public object[] Deserialize(Stream stream, IList<Type> messageTypes)

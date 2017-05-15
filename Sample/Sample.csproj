@@ -13,19 +13,6 @@
   <ItemGroup>
     <PackageReference Include="NServiceBus" Version="6.1.0" />
     <PackageReference Include="protobuf-net" Version="2.1.0" />
-    <Reference Include="System" />
-    <Reference Include="System.Configuration" />
-    <Reference Include="System.Core" />
-    <Reference Include="System.Xml.Linq" />
-    <Reference Include="System.Data.DataSetExtensions" />
-    <Reference Include="Microsoft.CSharp" />
-    <Reference Include="System.Data" />
-    <Reference Include="System.Xml" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\NServiceBus.ProtoBuf\NServiceBus.ProtoBuf.csproj">
-      <Project>{8d87d482-bc30-49f6-946c-73dd62fc4ec0}</Project>
-      <Name>NServiceBus.ProtoBuf</Name>
-    </ProjectReference>
+    <ProjectReference Include="..\NServiceBus.ProtoBuf\NServiceBus.ProtoBuf.csproj" />
   </ItemGroup>
 </Project>

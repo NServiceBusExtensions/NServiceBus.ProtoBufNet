@@ -11,9 +11,8 @@
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="NServiceBus" Version="6.1.0" />
-    <PackageReference Include="NServiceBus.AcceptanceTesting" Version="6.1.0" />
     <PackageReference Include="protobuf-net" Version="2.1.0" />
     <PackageReference Include="NUnit" Version="3.5.0" />
-    <ProjectReference Include="..\NServiceBus.ProtoBuf\NServiceBus.ProtoBuf.csproj"/>
+    <ProjectReference Include="..\NServiceBus.ProtoBuf\NServiceBus.ProtoBuf.csproj" />
   </ItemGroup>
 </Project>

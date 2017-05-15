@@ -14,18 +14,19 @@ class Program
     {
         var endpointConfiguration = new EndpointConfiguration("ProtoBufSerializerSample");
         endpointConfiguration.UseSerialization<ProtoBufSerializer>();
-        endpointConfiguration.EnableInstallers();
-        endpointConfiguration.SendFailedMessagesTo("error");
-        endpointConfiguration.UsePersistence<InMemoryPersistence>();
+        endpointConfiguration.UseTransport<LearningTransport>();
+        endpointConfiguration.UsePersistence<LearningPersistence>();
 
-        var endpoint = await Endpoint.Start(endpointConfiguration);
+        var endpoint = await Endpoint.Start(endpointConfiguration)
+            .ConfigureAwait(false);
         try
         {
             var message = new MyMessage
             {
                 Name = "immediate",
             };
-            await endpoint.SendLocal(message);
+            await endpoint.SendLocal(message)
+                .ConfigureAwait(false);
 
             await endpoint.ScheduleEvery(
                     timeSpan: TimeSpan.FromSeconds(5),
@@ -43,7 +44,8 @@ class Program
         }
         finally
         {
-            await endpoint.Stop();
+            await endpoint.Stop()
+                .ConfigureAwait(false);
         }
     }
 }

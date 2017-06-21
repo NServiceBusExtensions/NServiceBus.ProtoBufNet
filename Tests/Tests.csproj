@@ -10,9 +10,9 @@
     <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="NServiceBus" Version="6.3.0-alpha0153" />
-    <PackageReference Include="protobuf-net" Version="2.1.0" />
-    <PackageReference Include="NUnit" Version="3.6.1" />
+    <PackageReference Include="NServiceBus" Version="6.3.4" />
+    <PackageReference Include="protobuf-net" Version="2.2.1" />
+    <PackageReference Include="NUnit" Version="3.7.1" />
     <ProjectReference Include="..\NServiceBus.ProtoBuf\NServiceBus.ProtoBuf.csproj" />
   </ItemGroup>
 </Project>

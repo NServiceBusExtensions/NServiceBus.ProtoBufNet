@@ -11,8 +11,8 @@
     <OutputType>Exe</OutputType>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="NServiceBus" Version="6.3.4" />
-    <PackageReference Include="protobuf-net" Version="2.2.1" />
+    <PackageReference Include="NServiceBus" Version="6.4.3" />
+    <PackageReference Include="protobuf-net" Version="2.3.7" />
     <ProjectReference Include="..\NServiceBus.ProtoBuf\NServiceBus.ProtoBuf.csproj" />
   </ItemGroup>
 </Project>

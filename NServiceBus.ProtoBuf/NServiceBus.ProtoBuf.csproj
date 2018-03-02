@@ -13,8 +13,8 @@
     <NoWarn>1591</NoWarn>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="NServiceBus" Version="6.3.4" />
-    <PackageReference Include="protobuf-net" Version="2.2.1" />
+    <PackageReference Include="NServiceBus" Version="6.4.3" />
+    <PackageReference Include="protobuf-net" Version="2.3.7" />
     <PackageReference Include="PepitaPackage" Version="1.21.4" />
   </ItemGroup>
   <Target Name="Nuget" AfterTargets="AfterBuild">

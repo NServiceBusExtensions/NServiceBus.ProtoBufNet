@@ -15,7 +15,7 @@ https://nuget.org/packages/NServiceBus.ProtoBuf/
 
 ## Documentation
 
-https://docs.particular.net/nservicebus/serialization/protobuf
+https://docs.particular.net/nuget/NServiceBus.ProtoBuf
 
 
 ## Icon

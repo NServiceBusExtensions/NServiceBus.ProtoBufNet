@@ -31,5 +31,4 @@ static class ScheduledTaskHelper
             Every = target.Every
         };
     }
-
 }

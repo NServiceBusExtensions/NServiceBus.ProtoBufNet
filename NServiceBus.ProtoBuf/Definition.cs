@@ -5,7 +5,6 @@ using NServiceBus.Settings;
 
 namespace NServiceBus.ProtoBuf
 {
-
     /// <summary>
     /// Defines the capabilities of the ProtoBuf serializer
     /// </summary>

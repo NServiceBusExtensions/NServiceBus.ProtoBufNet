@@ -5,13 +5,11 @@ using ProtoBuf.Meta;
 
 namespace NServiceBus.ProtoBuf
 {
-
     /// <summary>
-    /// Extensions for <see cref="SerializationExtensions{T}"/> to manipulate how messages are serialized via Jil.
+    /// Extensions for <see cref="SerializationExtensions{T}"/> to manipulate how messages are serialized via ProtoBuf.
     /// </summary>
     public static class ProtoBufConfigurationExtensions
     {
-
         /// <summary>
         /// Configures the <see cref="RuntimeTypeModel"/> to use.
         /// </summary>

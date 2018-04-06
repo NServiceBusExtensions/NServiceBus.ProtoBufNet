@@ -13,6 +13,10 @@
 *.ncrunchsolution
 *.ncrunchproject
 *.DotSettings
+.learningtransport
+
+.vs
+*.received.txt
 
 # Build results
 [Dd]ebug/
@@ -36,14 +40,9 @@
 *.dotCover
 *test-results*
 
-
-##  If you have NuGet Package Restore enabled, uncomment this
-packages/
-ForSample/
-NugetBuild/
-NuGetBuildCodeOnly/
-ChocolateyNuGetBuild/
-NuGetTracingBuild/
+.vs/
+.learningtransport/
+nugets/
 
 # Visual Studio profiler
 *.psess
@@ -88,5 +87,4 @@ Fody/.DS_Store
 
 *.userprefs
 *.jtconfig
-
-.learningtransport
+*.bak

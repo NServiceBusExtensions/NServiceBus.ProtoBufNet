@@ -3,16 +3,15 @@ using System.Threading.Tasks;
 using NServiceBus;
 using NServiceBus.Logging;
 using NServiceBus.ProtoBuf;
-using NUnit.Framework;
 using ProtoBuf;
+using Xunit;
 
-[TestFixture]
 public class EndToEnd
 {
     static ManualResetEvent manualResetEvent = new ManualResetEvent(false);
     string endpointName = "EndToEnd";
 
-    [Test]
+    [Fact]
     public async Task Write()
     {
         var endpointConfiguration = new EndpointConfiguration(endpointName);
@@ -45,6 +44,7 @@ public class EndToEnd
         IHandleMessages<MessageToSend>
     {
         private static ILog log = LogManager.GetLogger<MessageHandler>();
+
         public Task Handle(MessageToSend message, IMessageHandlerContext context)
         {
             log.Info(message.Property);
@@ -52,5 +52,4 @@ public class EndToEnd
             return Task.CompletedTask;
         }
     }
-
 }

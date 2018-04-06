@@ -5,47 +5,32 @@ using NServiceBus.ProtoBuf;
 
 class Program
 {
-    static void Main()
+    static async Task Main()
     {
-        AsyncMain().GetAwaiter().GetResult();
-    }
+        var configuration = new EndpointConfiguration("ProtoBufSerializerSample");
+        configuration.UseSerialization<ProtoBufSerializer>();
+        configuration.UseTransport<LearningTransport>();
+        configuration.UsePersistence<LearningPersistence>();
 
-    static async Task AsyncMain()
-    {
-        var endpointConfiguration = new EndpointConfiguration("ProtoBufSerializerSample");
-        endpointConfiguration.UseSerialization<ProtoBufSerializer>();
-        endpointConfiguration.UseTransport<LearningTransport>();
-        endpointConfiguration.UsePersistence<LearningPersistence>();
-
-        var endpoint = await Endpoint.Start(endpointConfiguration)
-            .ConfigureAwait(false);
-        try
+        var endpoint = await Endpoint.Start(configuration);
+        var message = new MyMessage
         {
-            var message = new MyMessage
+            Name = "immediate",
+        };
+        await endpoint.SendLocal(message);
+
+        await endpoint.ScheduleEvery(
+            timeSpan: TimeSpan.FromSeconds(5),
+            task: pipelineContext =>
             {
-                Name = "immediate",
-            };
-            await endpoint.SendLocal(message)
-                .ConfigureAwait(false);
-
-            await endpoint.ScheduleEvery(
-                    timeSpan: TimeSpan.FromSeconds(5),
-                    task: pipelineContext =>
-                    {
-                        var delayed = new MyMessage
-                        {
-                            Name = "delayed",
-                        };
-                        return pipelineContext.SendLocal(delayed);
-                    })
-                .ConfigureAwait(false);
-            Console.WriteLine("\r\nPress any key to stop program\r\n");
-            Console.Read();
-        }
-        finally
-        {
-            await endpoint.Stop()
-                .ConfigureAwait(false);
-        }
+                var delayed = new MyMessage
+                {
+                    Name = "delayed",
+                };
+                return pipelineContext.SendLocal(delayed);
+            });
+        Console.WriteLine("\r\nPress any key to stop program\r\n");
+        Console.Read();
+        await endpoint.Stop();
     }
 }

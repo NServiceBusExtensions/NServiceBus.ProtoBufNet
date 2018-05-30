@@ -1,7 +1,6 @@
 ﻿using System.Threading;
 using System.Threading.Tasks;
 using NServiceBus;
-using NServiceBus.Logging;
 using NServiceBus.ProtoBuf;
 using ProtoBuf;
 using Xunit;
@@ -14,22 +13,20 @@ public class EndToEnd
     [Fact]
     public async Task Write()
     {
-        var endpointConfiguration = new EndpointConfiguration(endpointName);
-        endpointConfiguration.UsePersistence<LearningPersistence>();
-        endpointConfiguration.UseTransport<LearningTransport>();
-        endpointConfiguration.UseSerialization<ProtoBufSerializer>();
+        var configuration = new EndpointConfiguration(endpointName);
+        configuration.UsePersistence<LearningPersistence>();
+        configuration.UseTransport<LearningTransport>();
+        configuration.UseSerialization<ProtoBufSerializer>();
         var typesToScan = TypeScanner.NestedTypes<EndToEnd>();
-        endpointConfiguration.SetTypesToScan(typesToScan);
-        var endpointInstance = await Endpoint.Start(endpointConfiguration)
-            .ConfigureAwait(false);
+        configuration.SetTypesToScan(typesToScan);
+        var endpointInstance = await Endpoint.Start(configuration);
         var message = new MessageToSend
         {
             Property = "PropertyValue"
         };
-        await endpointInstance.SendLocal(message)
-            .ConfigureAwait(false);
+        await endpointInstance.SendLocal(message);
         manualResetEvent.WaitOne();
-        await endpointInstance.Stop().ConfigureAwait(false);
+        await endpointInstance.Stop();
     }
 
     [ProtoContract]
@@ -43,11 +40,8 @@ public class EndToEnd
     class MessageHandler :
         IHandleMessages<MessageToSend>
     {
-        private static ILog log = LogManager.GetLogger<MessageHandler>();
-
         public Task Handle(MessageToSend message, IMessageHandlerContext context)
         {
-            log.Info(message.Property);
             manualResetEvent.Set();
             return Task.CompletedTask;
         }

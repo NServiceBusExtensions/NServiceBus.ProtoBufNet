@@ -6,7 +6,7 @@
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="NServiceBus" Version="7.0.1" />
+    <PackageReference Include="NServiceBus" Version="7.1.4" />
     <PackageReference Include="protobuf-net" Version="2.4.0" />
   </ItemGroup>
 </Project>

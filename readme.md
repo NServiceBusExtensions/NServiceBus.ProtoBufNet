@@ -1,9 +1,4 @@
-![Icon](https://github.com/NServiceBusExtensions/NServiceBus.ProtoBufNet/raw/master/icon.png)
-
-NServiceBus.ProtoBuf
-===========================
-
-Add support for [NServiceBus](https://docs.particular.net/nservicebus/) message serialization via [ProtoBuf](https://github.com/mgravell/protobuf-net)
+<img src="https://raw.github.com/NServiceBusExtensions/NServiceBus.ProtoBufNet/master/src/icon.png" height="25px"> Add support for [NServiceBus](https://docs.particular.net/nservicebus/) message serialization via [ProtoBuf](https://github.com/mgravell/protobuf-net)
 
 
 <!--- StartOpenCollectiveBackers -->

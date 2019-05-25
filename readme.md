@@ -26,7 +26,7 @@ Thanks to all the backing developers! Support this project by [becoming a patron
 <a href="#" id="endofbacking"></a>
 
 
-## The NuGet package [![NuGet Status](https://img.shields.io/nuget/v/NServiceBus.ProtoBuf.svg?style=flat)](https://www.nuget.org/packages/NServiceBus.ProtoBuf/)
+## The NuGet package [![NuGet Status](https://img.shields.io/nuget/v/NServiceBus.ProtoBuf.svg)](https://www.nuget.org/packages/NServiceBus.ProtoBuf/)
 
 https://nuget.org/packages/NServiceBus.ProtoBuf/
 

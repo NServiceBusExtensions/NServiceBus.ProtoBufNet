@@ -1,4 +1,4 @@
-<img src="https://raw.github.com/NServiceBusExtensions/NServiceBus.ProtoBufNet/master/src/icon.png" height="25px"> Add support for [NServiceBus](https://docs.particular.net/nservicebus/) message serialization via [ProtoBuf](https://github.com/mgravell/protobuf-net)
+<img src="/src/icon.png" height="25px"> Add support for [NServiceBus](https://docs.particular.net/nservicebus/) message serialization via [ProtoBuf](https://github.com/mgravell/protobuf-net)
 
 <!--- StartOpenCollectiveBackers -->
 
@@ -26,9 +26,9 @@ Thanks to all the backing developers! Support this project by [becoming a patron
 <a href="#" id="endofbacking"></a>
 
 
-## The NuGet package [![NuGet Status](https://img.shields.io/nuget/v/NServiceBus.ProtoBuf.svg)](https://www.nuget.org/packages/NServiceBus.ProtoBuf/)
+## NuGet package
 
-https://nuget.org/packages/NServiceBus.ProtoBuf/
+https://nuget.org/packages/NServiceBus.ProtoBuf/ [![NuGet Status](https://img.shields.io/nuget/v/NServiceBus.ProtoBuf.svg)](https://www.nuget.org/packages/NServiceBus.ProtoBuf/)
 
 
 ## Documentation
@@ -38,4 +38,4 @@ https://docs.particular.net/nuget/NServiceBus.ProtoBuf
 
 ## Icon
 
-<a href="https://thenounproject.com/term/robot/10415/" target="_blank">Robot</a> designed by <a href="https://thenounproject.com/Soto/" target="_blank">Sotirios Papavasilopoulos</a> from The Noun Project
+[Robot](https://thenounproject.com/term/robot/10415/) designed by [Sotirios Papavasilopoulos](https://thenounproject.com/Soto/) from [The Noun Project](https://thenounproject.com).

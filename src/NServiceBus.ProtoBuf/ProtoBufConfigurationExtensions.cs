@@ -20,7 +20,7 @@ namespace NServiceBus.ProtoBuf
             Guard.AgainstNull(config, nameof(config));
             Guard.AgainstNull(runtimeTypeModel, nameof(runtimeTypeModel));
             var settings = config.GetSettings();
-            settings.Set<RuntimeTypeModel>(runtimeTypeModel);
+            settings.Set(runtimeTypeModel);
         }
 
         internal static RuntimeTypeModel GetRuntimeTypeModel(this ReadOnlySettings settings)

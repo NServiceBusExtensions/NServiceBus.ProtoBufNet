@@ -2,8 +2,9 @@
 using ProtoBuf;
 
 [ProtoContract]
-public class MyMessage : IMessage
+public class MyMessage :
+    IMessage
 {
     [ProtoMember(1)]
-    public string Name { get; set; }
+    public string? Name { get; set; }
 }

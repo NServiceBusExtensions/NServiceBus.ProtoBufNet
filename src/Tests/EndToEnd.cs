@@ -34,7 +34,7 @@ public class EndToEnd
         IMessage
     {
         [ProtoMember(1)]
-        public string Property { get; set; }
+        public string? Property { get; set; }
     }
 
     class MessageHandler :

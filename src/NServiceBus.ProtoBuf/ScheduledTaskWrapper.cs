@@ -10,7 +10,7 @@ namespace NServiceBus.ProtoBuf
         public Guid TaskId { get; set; }
 
         [ProtoMember(2)]
-        public string Name { get; set; }
+        public string? Name { get; set; }
 
         [ProtoMember(3)]
         public TimeSpan Every { get; set; }

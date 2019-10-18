@@ -5,9 +5,24 @@ Source File: /readme.source.md
 To change this file edit the source file and then run MarkdownSnippets.
 -->
 
-<img src="/src/icon.png" height="25px"> Add support for [NServiceBus](https://docs.particular.net/nservicebus/) message serialization via [ProtoBuf](https://github.com/mgravell/protobuf-net)
+# <img src="/src/icon.png" height="30px"> NServiceBus.ProtoBufNet
 
-include: protobufmultiple
+[![Build status](https://ci.appveyor.com/api/projects/status/7cptj0com9mlc5k6/branch/master?svg=true)](https://ci.appveyor.com/project/SimonCropp/NServiceBus.ProtoBufNet)
+[![NuGet Status](https://img.shields.io/nuget/v/NServiceBus.ProtoBufNet.svg?cacheSeconds=86400)](https://www.nuget.org/packages/NServiceBus.ProtoBufNet/)
+
+Add support for [NServiceBus](https://docs.particular.net/nservicebus/) message serialization via [ProtoBuf](https://github.com/mgravell/protobuf-net)
+
+<!-- toc -->
+## Contents
+
+  * [Community backed](#community-backed)
+    * [Sponsors](#sponsors)
+    * [Patrons](#patrons)
+  * [Usage](#usage)
+    * [Custom Settings](#custom-settings)
+    * [Custom content key](#custom-content-key)
+<!-- endtoc -->
+
 
 <!--- StartOpenCollectiveBackers -->
 
@@ -35,11 +50,6 @@ Thanks to all the backing developers! Support this project by [becoming a patron
 <a href="#" id="endofbacking"></a>
 
 
-## NuGet package
-
-https://nuget.org/packages/NServiceBus.ProtoBuf/ [![NuGet Status](https://img.shields.io/nuget/v/NServiceBus.ProtoBuf.svg)](https://www.nuget.org/packages/NServiceBus.ProtoBuf/)
-
-
 ## Usage
 
 <!-- snippet: ProtobufSerialization -->
@@ -50,7 +60,14 @@ endpointConfiguration.UseSerialization<ProtoBufSerializer>();
 <sup>[snippet source](/src/Tests/Snippets/Usage.cs#L9-L13) / [anchor](#snippet-protobufserialization)</sup>
 <!-- endsnippet -->
 
-include: interface-not-supported
+This serializer does not support [messages defined as interfaces](https://docs.particular.net/nservicebus/messaging/messages-as-interfaces.md). If an explicit interface is sent, an exception will be thrown with the following message:
+
+```
+Interface based message are not supported.
+Create a class that implements the desired interface
+```
+
+Instead, use a public class with the same contract as the interface. The class can optionally implement any required interfaces.
 
 
 ### Custom Settings
@@ -69,7 +86,9 @@ serialization.RuntimeTypeModel(runtimeTypeModel);
 <!-- endsnippet -->
 
 
-include: custom-contenttype-key
+### Custom content key
+
+When using [additional deserializers](https://docs.particular.net/nservicebus/serialization/#specifying-additional-deserializers) or transitioning between different versions of the same serializer it can be helpful to take explicit control over the content type a serializer passes to NServiceBus (to be used for the [ContentType header](https://docs.particular.net/nservicebus/messaging/headers.md#serialization-headers-nservicebus-contenttype)).
 
 <!-- snippet: ProtoBufContentTypeKey -->
 <a id='snippet-protobufcontenttypekey'/></a>
@@ -80,6 +99,10 @@ serialization.ContentTypeKey("custom-key");
 <sup>[snippet source](/src/Tests/Snippets/Usage.cs#L30-L35) / [anchor](#snippet-protobufcontenttypekey)</sup>
 <!-- endsnippet -->
 
+
+## Release Notes
+
+See [closed milestones](../../milestones?state=closed).
 
 
 ## Icon

@@ -16,6 +16,5 @@ public static class TypeScanner
         {
             yield return extraType;
         }
-
     }
 }

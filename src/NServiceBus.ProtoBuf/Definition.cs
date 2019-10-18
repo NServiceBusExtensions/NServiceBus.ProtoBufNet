@@ -8,7 +8,8 @@ namespace NServiceBus.ProtoBuf
     /// <summary>
     /// Defines the capabilities of the ProtoBuf serializer
     /// </summary>
-    public class ProtoBufSerializer : SerializationDefinition
+    public class ProtoBufSerializer :
+        SerializationDefinition
     {
         /// <summary>
         /// <see cref="SerializationDefinition.Configure"/>

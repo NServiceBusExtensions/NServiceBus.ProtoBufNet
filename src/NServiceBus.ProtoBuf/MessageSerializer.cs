@@ -7,7 +7,8 @@ using NServiceBus.ProtoBuf;
 using NServiceBus.Serialization;
 using ProtoBuf.Meta;
 
-class MessageSerializer : IMessageSerializer
+class MessageSerializer :
+    IMessageSerializer
 {
     RuntimeTypeModel runtimeTypeModel;
 

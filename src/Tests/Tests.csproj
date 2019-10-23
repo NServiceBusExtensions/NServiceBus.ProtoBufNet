@@ -6,7 +6,7 @@
     <DebugSymbols>True</DebugSymbols>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="NServiceBus" Version="7.1.10" />
+    <PackageReference Include="NServiceBus" Version="7.2.0" />
     <PackageReference Include="protobuf-net" Version="2.4.1" />
     <PackageReference Include="Xunit" Version="2.4.1" />
     <PackageReference Include="Xunit.ApprovalTests" Version="4.0.0" />

@@ -8,7 +8,7 @@ To change this file edit the source file and then run MarkdownSnippets.
 # <img src="/src/icon.png" height="30px"> NServiceBus.ProtoBufNet
 
 [![Build status](https://ci.appveyor.com/api/projects/status/7cptj0com9mlc5k6/branch/master?svg=true)](https://ci.appveyor.com/project/SimonCropp/nservicebus-ProtoBufNet)
-[![NuGet Status](https://img.shields.io/nuget/v/NServiceBus.ProtoBufNet.svg?cacheSeconds=86400)](https://www.nuget.org/packages/NServiceBus.ProtoBufNet/)
+[![NuGet Status](https://img.shields.io/nuget/v/NServiceBus.ProtoBufNet.svg)](https://www.nuget.org/packages/NServiceBus.ProtoBufNet/)
 
 Add support for [NServiceBus](https://docs.particular.net/nservicebus/) message serialization via [ProtoBuf](https://github.com/mgravell/protobuf-net)
 

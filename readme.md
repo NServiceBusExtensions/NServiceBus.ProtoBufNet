@@ -8,7 +8,7 @@ To change this file edit the source file and then run MarkdownSnippets.
 # <img src="/src/icon.png" height="30px"> NServiceBus.ProtoBufNet
 
 [![Build status](https://ci.appveyor.com/api/projects/status/7cptj0com9mlc5k6/branch/master?svg=true)](https://ci.appveyor.com/project/SimonCropp/nservicebus-ProtoBufNet)
-[![NuGet Status](https://img.shields.io/nuget/v/NServiceBus.ProtoBufNet.svg)](https://www.nuget.org/packages/NServiceBus.ProtoBufNet/)
+[![NuGet Status](https://img.shields.io/nuget/v/NServiceBus.ProtoBuf.svg)](https://www.nuget.org/packages/NServiceBus.ProtoBuf/)
 
 Add support for [NServiceBus](https://docs.particular.net/nservicebus/) message serialization via [ProtoBuf](https://github.com/mgravell/protobuf-net)
 
@@ -20,9 +20,7 @@ Add support for [NServiceBus](https://docs.particular.net/nservicebus/) message 
     * [Patrons](#patrons)
   * [Usage](#usage)
     * [Custom Settings](#custom-settings)
-    * [Custom content key](#custom-content-key)
-<!-- endtoc -->
-
+    * [Custom content key](#custom-content-key)<!-- endtoc -->
 
 <!--- StartOpenCollectiveBackers -->
 
@@ -57,7 +55,7 @@ Thanks to all the backing developers! Support this project by [becoming a patron
 ```cs
 endpointConfiguration.UseSerialization<ProtoBufSerializer>();
 ```
-<sup>[snippet source](/src/Tests/Snippets/Usage.cs#L9-L13) / [anchor](#snippet-protobufserialization)</sup>
+<sup><a href='/src/Tests/Snippets/Usage.cs#L9-L13' title='File snippet `protobufserialization` was extracted from'>snippet source</a> | <a href='#snippet-protobufserialization' title='Navigate to start of snippet `protobufserialization`'>anchor</a></sup>
 <!-- endsnippet -->
 
 This serializer does not support [messages defined as interfaces](https://docs.particular.net/nservicebus/messaging/messages-as-interfaces). If an explicit interface is sent, an exception will be thrown with the following message:
@@ -82,7 +80,7 @@ runtimeTypeModel.IncludeDateTimeKind = true;
 var serialization = endpointConfiguration.UseSerialization<ProtoBufSerializer>();
 serialization.RuntimeTypeModel(runtimeTypeModel);
 ```
-<sup>[snippet source](/src/Tests/Snippets/Usage.cs#L18-L25) / [anchor](#snippet-protobufcustomsettings)</sup>
+<sup><a href='/src/Tests/Snippets/Usage.cs#L18-L25' title='File snippet `protobufcustomsettings` was extracted from'>snippet source</a> | <a href='#snippet-protobufcustomsettings' title='Navigate to start of snippet `protobufcustomsettings`'>anchor</a></sup>
 <!-- endsnippet -->
 
 
@@ -96,7 +94,7 @@ When using [additional deserializers](https://docs.particular.net/nservicebus/se
 var serialization = endpointConfiguration.UseSerialization<ProtoBufSerializer>();
 serialization.ContentTypeKey("custom-key");
 ```
-<sup>[snippet source](/src/Tests/Snippets/Usage.cs#L30-L35) / [anchor](#snippet-protobufcontenttypekey)</sup>
+<sup><a href='/src/Tests/Snippets/Usage.cs#L30-L35' title='File snippet `protobufcontenttypekey` was extracted from'>snippet source</a> | <a href='#snippet-protobufcontenttypekey' title='Navigate to start of snippet `protobufcontenttypekey`'>anchor</a></sup>
 <!-- endsnippet -->
 
 

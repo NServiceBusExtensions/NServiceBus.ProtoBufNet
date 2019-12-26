@@ -13,13 +13,13 @@ class Usage
         #endregion
     }
 
-    void CustomSettings(EndpointConfiguration endpointConfiguration)
+    void CustomSettings(EndpointConfiguration configuration)
     {
         #region ProtoBufCustomSettings
 
         var runtimeTypeModel = TypeModel.Create();
         runtimeTypeModel.IncludeDateTimeKind = true;
-        var serialization = endpointConfiguration.UseSerialization<ProtoBufSerializer>();
+        var serialization = configuration.UseSerialization<ProtoBufSerializer>();
         serialization.RuntimeTypeModel(runtimeTypeModel);
 
         #endregion

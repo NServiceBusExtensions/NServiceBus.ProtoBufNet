@@ -4,11 +4,11 @@ using ProtoBuf.Meta;
 
 class Usage
 {
-    Usage(EndpointConfiguration endpointConfiguration)
+    Usage(EndpointConfiguration configuration)
     {
         #region ProtoBufSerialization
 
-        endpointConfiguration.UseSerialization<ProtoBufSerializer>();
+        configuration.UseSerialization<ProtoBufSerializer>();
 
         #endregion
     }
@@ -25,11 +25,11 @@ class Usage
         #endregion
     }
 
-    void ContentTypeKey(EndpointConfiguration endpointConfiguration)
+    void ContentTypeKey(EndpointConfiguration configuration)
     {
         #region ProtoBufContentTypeKey
 
-        var serialization = endpointConfiguration.UseSerialization<ProtoBufSerializer>();
+        var serialization = configuration.UseSerialization<ProtoBufSerializer>();
         serialization.ContentTypeKey("custom-key");
 
         #endregion

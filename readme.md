@@ -29,7 +29,7 @@ Add support for [NServiceBus](https://docs.particular.net/nservicebus/) message 
 
 ## Community backed
 
-**It is expected that all developers [become a Patron](https://opencollective.com/nservicebusextensions/order/6976) to use any of these libraries. [Go to licensing FAQ](https://github.com/NServiceBusExtensions/Home/blob/master/readme.md#licensingpatron-faq)**
+**It is expected that all developers [become a Patron](https://opencollective.com/nservicebusextensions/order/6976) to use any of these libraries. [Go to licensing FAQ](https://github.com/NServiceBusExtensions/Home/#licensingpatron-faq)**
 
 
 ### Sponsors
@@ -48,12 +48,17 @@ Thanks to all the backing developers! Support this project by [becoming a patron
 <a href="#" id="endofbacking"></a>
 
 
+## NuGet package
+
+https://nuget.org/packages/NServiceBus.ProtoBuf/
+
+
 ## Usage
 
 <!-- snippet: ProtobufSerialization -->
 <a id='snippet-protobufserialization'/></a>
 ```cs
-endpointConfiguration.UseSerialization<ProtoBufSerializer>();
+configuration.UseSerialization<ProtoBufSerializer>();
 ```
 <sup><a href='/src/Tests/Snippets/Usage.cs#L9-L13' title='File snippet `protobufserialization` was extracted from'>snippet source</a> | <a href='#snippet-protobufserialization' title='Navigate to start of snippet `protobufserialization`'>anchor</a></sup>
 <!-- endsnippet -->
@@ -77,7 +82,7 @@ Customizes the `SerializerOptions` used for serialization.
 ```cs
 var runtimeTypeModel = TypeModel.Create();
 runtimeTypeModel.IncludeDateTimeKind = true;
-var serialization = endpointConfiguration.UseSerialization<ProtoBufSerializer>();
+var serialization = configuration.UseSerialization<ProtoBufSerializer>();
 serialization.RuntimeTypeModel(runtimeTypeModel);
 ```
 <sup><a href='/src/Tests/Snippets/Usage.cs#L18-L25' title='File snippet `protobufcustomsettings` was extracted from'>snippet source</a> | <a href='#snippet-protobufcustomsettings' title='Navigate to start of snippet `protobufcustomsettings`'>anchor</a></sup>
@@ -91,7 +96,7 @@ When using [additional deserializers](https://docs.particular.net/nservicebus/se
 <!-- snippet: ProtoBufContentTypeKey -->
 <a id='snippet-protobufcontenttypekey'/></a>
 ```cs
-var serialization = endpointConfiguration.UseSerialization<ProtoBufSerializer>();
+var serialization = configuration.UseSerialization<ProtoBufSerializer>();
 serialization.ContentTypeKey("custom-key");
 ```
 <sup><a href='/src/Tests/Snippets/Usage.cs#L30-L35' title='File snippet `protobufcontenttypekey` was extracted from'>snippet source</a> | <a href='#snippet-protobufcontenttypekey' title='Navigate to start of snippet `protobufcontenttypekey`'>anchor</a></sup>

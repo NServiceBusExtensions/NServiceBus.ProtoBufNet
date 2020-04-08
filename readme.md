@@ -87,10 +87,10 @@ Customizes the `SerializerOptions` used for serialization.
 <!-- snippet: ProtoBufCustomSettings -->
 <a id='snippet-protobufcustomsettings'/></a>
 ```cs
-var runtimeTypeModel = TypeModel.Create();
-runtimeTypeModel.IncludeDateTimeKind = true;
+var model = RuntimeTypeModel.Create();
+model.IncludeDateTimeKind = true;
 var serialization = configuration.UseSerialization<ProtoBufSerializer>();
-serialization.RuntimeTypeModel(runtimeTypeModel);
+serialization.RuntimeTypeModel(model);
 ```
 <sup><a href='/src/Tests/Snippets/Usage.cs#L18-L25' title='File snippet `protobufcustomsettings` was extracted from'>snippet source</a> | <a href='#snippet-protobufcustomsettings' title='Navigate to start of snippet `protobufcustomsettings`'>anchor</a></sup>
 <!-- endsnippet -->

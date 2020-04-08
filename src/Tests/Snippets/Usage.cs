@@ -17,10 +17,10 @@ class Usage
     {
         #region ProtoBufCustomSettings
 
-        var runtimeTypeModel = TypeModel.Create();
-        runtimeTypeModel.IncludeDateTimeKind = true;
+        var model = RuntimeTypeModel.Create();
+        model.IncludeDateTimeKind = true;
         var serialization = configuration.UseSerialization<ProtoBufSerializer>();
-        serialization.RuntimeTypeModel(runtimeTypeModel);
+        serialization.RuntimeTypeModel(model);
 
         #endregion
     }

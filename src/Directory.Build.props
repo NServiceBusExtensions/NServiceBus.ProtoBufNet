@@ -2,6 +2,7 @@
 <Project>
   <PropertyGroup>
     <Version>3.0.4</Version>
+    <AssemblyVersion>1.0.0</AssemblyVersion>
     <PackageTags>NServiceBus, ProtoBuf</PackageTags>
   </PropertyGroup>
 </Project>

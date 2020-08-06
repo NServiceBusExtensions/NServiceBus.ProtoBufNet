@@ -63,7 +63,7 @@ https://nuget.org/packages/NServiceBus.ProtoBuf/
 ## Usage
 
 <!-- snippet: ProtobufSerialization -->
-<a id='snippet-protobufserialization'/></a>
+<a id='snippet-protobufserialization'></a>
 ```cs
 configuration.UseSerialization<ProtoBufSerializer>();
 ```
@@ -85,7 +85,7 @@ Instead, use a public class with the same contract as the interface. The class c
 Customizes the `SerializerOptions` used for serialization.
 
 <!-- snippet: ProtoBufCustomSettings -->
-<a id='snippet-protobufcustomsettings'/></a>
+<a id='snippet-protobufcustomsettings'></a>
 ```cs
 var model = RuntimeTypeModel.Create();
 model.IncludeDateTimeKind = true;
@@ -101,7 +101,7 @@ serialization.RuntimeTypeModel(model);
 When using [additional deserializers](https://docs.particular.net/nservicebus/serialization/#specifying-additional-deserializers) or transitioning between different versions of the same serializer it can be helpful to take explicit control over the content type a serializer passes to NServiceBus (to be used for the [ContentType header](https://docs.particular.net/nservicebus/messaging/headers#serialization-headers-nservicebus-contenttype)).
 
 <!-- snippet: ProtoBufContentTypeKey -->
-<a id='snippet-protobufcontenttypekey'/></a>
+<a id='snippet-protobufcontenttypekey'></a>
 ```cs
 var serialization = configuration.UseSerialization<ProtoBufSerializer>();
 serialization.ContentTypeKey("custom-key");

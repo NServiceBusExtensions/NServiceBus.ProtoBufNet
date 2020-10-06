@@ -63,11 +63,11 @@ https://nuget.org/packages/NServiceBus.ProtoBuf/
 ## Usage
 
 <!-- snippet: ProtobufSerialization -->
-<a id='snippet-protobufserialization'></a>
+<a id='ecd371b6'></a>
 ```cs
 configuration.UseSerialization<ProtoBufSerializer>();
 ```
-<sup><a href='/src/Tests/Snippets/Usage.cs#L9-L13' title='File snippet `protobufserialization` was extracted from'>snippet source</a> | <a href='#snippet-protobufserialization' title='Navigate to start of snippet `protobufserialization`'>anchor</a></sup>
+<sup><a href='/src/Tests/Snippets/Usage.cs#L9-L13' title='Snippet source file'>snippet source</a> | <a href='#ecd371b6' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 This serializer does not support [messages defined as interfaces](https://docs.particular.net/nservicebus/messaging/messages-as-interfaces). If an explicit interface is sent, an exception will be thrown with the following message:
@@ -85,14 +85,14 @@ Instead, use a public class with the same contract as the interface. The class c
 Customizes the `SerializerOptions` used for serialization.
 
 <!-- snippet: ProtoBufCustomSettings -->
-<a id='snippet-protobufcustomsettings'></a>
+<a id='003dfefb'></a>
 ```cs
 var model = RuntimeTypeModel.Create();
 model.IncludeDateTimeKind = true;
 var serialization = configuration.UseSerialization<ProtoBufSerializer>();
 serialization.RuntimeTypeModel(model);
 ```
-<sup><a href='/src/Tests/Snippets/Usage.cs#L18-L25' title='File snippet `protobufcustomsettings` was extracted from'>snippet source</a> | <a href='#snippet-protobufcustomsettings' title='Navigate to start of snippet `protobufcustomsettings`'>anchor</a></sup>
+<sup><a href='/src/Tests/Snippets/Usage.cs#L18-L25' title='Snippet source file'>snippet source</a> | <a href='#003dfefb' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 
@@ -101,12 +101,12 @@ serialization.RuntimeTypeModel(model);
 When using [additional deserializers](https://docs.particular.net/nservicebus/serialization/#specifying-additional-deserializers) or transitioning between different versions of the same serializer it can be helpful to take explicit control over the content type a serializer passes to NServiceBus (to be used for the [ContentType header](https://docs.particular.net/nservicebus/messaging/headers#serialization-headers-nservicebus-contenttype)).
 
 <!-- snippet: ProtoBufContentTypeKey -->
-<a id='snippet-protobufcontenttypekey'></a>
+<a id='ebc14e22'></a>
 ```cs
 var serialization = configuration.UseSerialization<ProtoBufSerializer>();
 serialization.ContentTypeKey("custom-key");
 ```
-<sup><a href='/src/Tests/Snippets/Usage.cs#L30-L35' title='File snippet `protobufcontenttypekey` was extracted from'>snippet source</a> | <a href='#snippet-protobufcontenttypekey' title='Navigate to start of snippet `protobufcontenttypekey`'>anchor</a></sup>
+<sup><a href='/src/Tests/Snippets/Usage.cs#L30-L35' title='Snippet source file'>snippet source</a> | <a href='#ebc14e22' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 

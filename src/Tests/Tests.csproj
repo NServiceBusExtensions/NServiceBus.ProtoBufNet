@@ -11,7 +11,7 @@
     <PackageReference Include="Verify.Xunit" Version="10.9.1" />
     <PackageReference Include="xunit.runner.visualstudio" Version="2.4.3" />
     <PackageReference Include="MarkdownSnippets.MsBuild" Version="23.0.2" PrivateAssets="all" />
-    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.8.3" />
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.9.1" />
     <ProjectReference Include="..\NServiceBus.ProtoBuf\NServiceBus.ProtoBuf.csproj" />
     <PackageReference Include="ProjectDefaults" Version="1.0.54" PrivateAssets="All" />
   </ItemGroup>

@@ -4,7 +4,7 @@
     <TargetFramework>netcoreapp3.1</TargetFramework>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="NServiceBus" Version="7.4.7" />
+    <PackageReference Include="NServiceBus" Version="7.5.0" />
     <PackageReference Include="protobuf-net" Version="3.0.101" />
     <PackageReference Include="Xunit" Version="2.4.1" />
     <PackageReference Include="XunitContext" Version="3.0.0" />

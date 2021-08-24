@@ -16,7 +16,7 @@ namespace NServiceBus.ProtoBuf
         /// </summary>
         public override Func<IMessageMapper, IMessageSerializer> Configure(ReadOnlySettings settings)
         {
-            return mapper =>
+            return _ =>
             {
                 var runtimeTypeModel = settings.GetRuntimeTypeModel();
                 var contentTypeKey = settings.GetContentTypeKey();

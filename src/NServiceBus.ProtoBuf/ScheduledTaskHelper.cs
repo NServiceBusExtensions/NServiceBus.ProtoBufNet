@@ -14,7 +14,7 @@ static class ScheduledTaskHelper
 
     public static ScheduledTaskWrapper ToWrapper(ScheduledTask target)
     {
-        return new ScheduledTaskWrapper
+        return new()
         {
             TaskId = target.TaskId,
             Name = target.Name,

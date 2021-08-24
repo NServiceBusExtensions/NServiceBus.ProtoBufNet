@@ -17,8 +17,6 @@ namespace NServiceBus.ProtoBuf
         /// <param name="runtimeTypeModel">The <see cref="RuntimeTypeModel"/> to use.</param>
         public static void RuntimeTypeModel(this SerializationExtensions<ProtoBufSerializer> config, RuntimeTypeModel runtimeTypeModel)
         {
-            Guard.AgainstNull(config, nameof(config));
-            Guard.AgainstNull(runtimeTypeModel, nameof(runtimeTypeModel));
             var settings = config.GetSettings();
             settings.Set(runtimeTypeModel);
         }
@@ -38,8 +36,7 @@ namespace NServiceBus.ProtoBuf
         /// <param name="contentTypeKey">The content type key to use.</param>
         public static void ContentTypeKey(this SerializationExtensions<ProtoBufSerializer> config, string contentTypeKey)
         {
-            Guard.AgainstNull(config, nameof(config));
-            Guard.AgainstNullOrEmpty(contentTypeKey, nameof(contentTypeKey));
+            Guard.AgainstEmpty(contentTypeKey, nameof(contentTypeKey));
             var settings = config.GetSettings();
             settings.Set("NServiceBus.ProtoBuf.ContentTypeKey", contentTypeKey);
         }

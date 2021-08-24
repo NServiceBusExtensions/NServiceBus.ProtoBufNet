@@ -12,7 +12,7 @@ class MessageSerializer :
 {
     RuntimeTypeModel runtimeTypeModel;
 
-    public MessageSerializer(string contentType, RuntimeTypeModel runtimeTypeModel)
+    public MessageSerializer(string? contentType, RuntimeTypeModel? runtimeTypeModel)
     {
         if (runtimeTypeModel == null)
         {
@@ -22,6 +22,7 @@ class MessageSerializer :
         {
             this.runtimeTypeModel = runtimeTypeModel;
         }
+
         if (contentType == null)
         {
             ContentType = "protobuf";
@@ -37,7 +38,7 @@ class MessageSerializer :
         var messageType = message.GetType();
         if (messageType.Name.EndsWith("__impl"))
         {
-            throw new Exception("Interface based message are not supported. Create a class that implements the desired interface.");
+            throw new("Interface based message are not supported. Create a class that implements the desired interface.");
         }
 
         if (message is ScheduledTask task)
@@ -62,7 +63,7 @@ class MessageSerializer :
         }
 
         var message = runtimeTypeModel.Deserialize(stream, null, messageType);
-        return new[]{ message};
+        return new[] { message };
     }
 
     public string ContentType { get; }

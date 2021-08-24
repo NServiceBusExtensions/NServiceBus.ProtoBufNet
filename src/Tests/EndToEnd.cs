@@ -7,7 +7,7 @@ using Xunit;
 
 public class EndToEnd
 {
-    static ManualResetEvent manualResetEvent = new ManualResetEvent(false);
+    static ManualResetEvent manualResetEvent = new(false);
     string endpointName = "EndToEnd";
 
     [Fact]

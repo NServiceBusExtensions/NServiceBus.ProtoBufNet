@@ -10,7 +10,7 @@ public static class EndpointConfigurationExtensions
         var methodInfo = typeof(EndpointConfiguration).GetMethod("TypesToScanInternal", BindingFlags.NonPublic | BindingFlags.Instance);
         if (methodInfo == null)
         {
-            throw new Exception("Could not find 'TypesToScanInternal' field.");
+            throw new("Could not find 'TypesToScanInternal' field.");
         }
         methodInfo.Invoke(configuration, new object[]
         {

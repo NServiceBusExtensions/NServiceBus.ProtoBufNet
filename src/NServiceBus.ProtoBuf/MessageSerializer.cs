@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using NServiceBus;
+﻿using NServiceBus;
 using NServiceBus.ProtoBuf;
 using NServiceBus.Serialization;
 using ProtoBuf.Meta;

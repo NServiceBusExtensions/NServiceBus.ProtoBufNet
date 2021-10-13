@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Reflection;
-using NServiceBus;
+﻿using NServiceBus;
 
 public static class EndpointConfigurationExtensions
 {

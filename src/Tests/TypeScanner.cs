@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Reflection;
-
-public static class TypeScanner
+﻿public static class TypeScanner
 {
     public static IEnumerable<Type> NestedTypes<T>(params Type[] extraTypes)
     {

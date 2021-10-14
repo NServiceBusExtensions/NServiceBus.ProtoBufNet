@@ -13,6 +13,6 @@
     <PackageReference Include="MarkdownSnippets.MsBuild" Version="24.2.0" PrivateAssets="all" />
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.11.0" />
     <ProjectReference Include="..\NServiceBus.ProtoBuf\NServiceBus.ProtoBuf.csproj" />
-    <PackageReference Include="ProjectDefaults" Version="1.0.60" PrivateAssets="all" />
+    <PackageReference Include="ProjectDefaults" Version="1.0.61" PrivateAssets="All" />
   </ItemGroup>
 </Project>

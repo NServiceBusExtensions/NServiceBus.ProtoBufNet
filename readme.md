@@ -18,7 +18,6 @@ Add support for [NServiceBus](https://docs.particular.net/nservicebus/) message 
   * [Community backed](#community-backed)
     * [Sponsors](#sponsors)
     * [Patrons](#patrons)
-  * [Support via TideLift](#support-via-tidelift)
   * [Usage](#usage)
     * [Custom Settings](#custom-settings)
     * [Custom content key](#custom-content-key)
@@ -31,7 +30,7 @@ Add support for [NServiceBus](https://docs.particular.net/nservicebus/) message 
 
 ## Community backed
 
-**It is expected that all developers either [become a Patron](https://opencollective.com/nservicebusextensions/contribute/patron-6976) or have a [Tidelift Subscription](#support-via-tidelift) to use NServiceBusExtensions. [Go to licensing FAQ](https://github.com/NServiceBusExtensions/Home/#licensingpatron-faq)**
+**It is expected that all developers either [become a Patron](https://opencollective.com/nservicebusextensions/contribute/patron-6976) to use NServiceBusExtensions. [Go to licensing FAQ](https://github.com/NServiceBusExtensions/Home/#licensingpatron-faq)**
 
 
 ### Sponsors
@@ -48,11 +47,6 @@ Thanks to all the backing developers. Support this project by [becoming a patron
 <a href="#" id="endofbacking"></a>
 
 <!--- EndOpenCollectiveBackers -->
-
-
-## Support via TideLift
-
-Support is available via a [Tidelift Subscription](https://tidelift.com/subscription/pkg/nuget-nservicebus.protobuf?utm_source=nuget-nservicebus.protobuf&utm_medium=referral&utm_campaign=enterprise).
 
 
 ## NuGet package
@@ -108,11 +102,6 @@ serialization.ContentTypeKey("custom-key");
 ```
 <sup><a href='/src/Tests/Snippets/Usage.cs#L30-L35' title='Snippet source file'>snippet source</a> | <a href='#snippet-protobufcontenttypekey' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
-
-
-## Security contact information
-
-To report a security vulnerability, use the [Tidelift security contact](https://tidelift.com/security). Tidelift will coordinate the fix and disclosure.
 
 
 ## Icon

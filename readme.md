@@ -20,8 +20,7 @@ Add support for [NServiceBus](https://docs.particular.net/nservicebus/) message 
     * [Patrons](#patrons)
   * [Usage](#usage)
     * [Custom Settings](#custom-settings)
-    * [Custom content key](#custom-content-key)
-  * [Security contact information](#security-contact-information)<!-- endToc -->
+    * [Custom content key](#custom-content-key)<!-- endToc -->
 
 <!--- StartOpenCollectiveBackers -->
 

@@ -7,12 +7,12 @@
     <PackageReference Include="NServiceBus" Version="7.6.0" />
     <PackageReference Include="protobuf-net" Version="3.0.101" />
     <PackageReference Include="Xunit" Version="2.4.1" />
-    <PackageReference Include="XunitContext" Version="3.1.2" />
-    <PackageReference Include="Verify.Xunit" Version="15.0.1" />
+    <PackageReference Include="XunitContext" Version="3.2.1" />
+    <PackageReference Include="Verify.Xunit" Version="15.2.1" />
     <PackageReference Include="xunit.runner.visualstudio" Version="2.4.3" />
     <PackageReference Include="MarkdownSnippets.MsBuild" Version="24.2.2" PrivateAssets="all" />
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.0.0" />
     <ProjectReference Include="..\NServiceBus.ProtoBuf\NServiceBus.ProtoBuf.csproj" />
-    <PackageReference Include="ProjectDefaults" Version="1.0.64" PrivateAssets="all" />
+    <PackageReference Include="ProjectDefaults" Version="1.0.68" PrivateAssets="all" />
   </ItemGroup>
 </Project>

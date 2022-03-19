@@ -1,7 +1,6 @@
 ﻿using NServiceBus;
 using NServiceBus.ProtoBuf;
 using ProtoBuf;
-using Xunit;
 
 public class EndToEnd
 {

@@ -1,5 +1,6 @@
 ﻿using NServiceBus;
 using NServiceBus.ProtoBuf;
+#pragma warning disable CS0618
 
 class Program
 {

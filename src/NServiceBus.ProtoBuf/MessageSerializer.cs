@@ -37,7 +37,9 @@ class MessageSerializer :
             throw new("Interface based message are not supported. Create a class that implements the desired interface.");
         }
 
+#pragma warning disable CS0618
         if (message is ScheduledTask task)
+#pragma warning restore CS0618
         {
             var wrapper = ScheduledTaskHelper.ToWrapper(task);
             runtimeTypeModel.Serialize(stream, wrapper);

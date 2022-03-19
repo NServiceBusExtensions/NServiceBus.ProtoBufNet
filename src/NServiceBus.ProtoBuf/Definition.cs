@@ -13,13 +13,11 @@ public class ProtoBufSerializer :
     /// <summary>
     /// <see cref="SerializationDefinition.Configure"/>
     /// </summary>
-    public override Func<IMessageMapper, IMessageSerializer> Configure(ReadOnlySettings settings)
-    {
-        return _ =>
+    public override Func<IMessageMapper, IMessageSerializer> Configure(ReadOnlySettings settings) =>
+        _ =>
         {
             var runtimeTypeModel = settings.GetRuntimeTypeModel();
             var contentTypeKey = settings.GetContentTypeKey();
             return new MessageSerializer(contentTypeKey, runtimeTypeModel);
         };
-    }
 }

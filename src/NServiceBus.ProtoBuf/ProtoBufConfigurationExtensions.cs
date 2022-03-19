@@ -21,10 +21,8 @@ public static class ProtoBufConfigurationExtensions
         settings.Set(runtimeTypeModel);
     }
 
-    internal static RuntimeTypeModel GetRuntimeTypeModel(this ReadOnlySettings settings)
-    {
-        return settings.GetOrDefault<RuntimeTypeModel>();
-    }
+    internal static RuntimeTypeModel GetRuntimeTypeModel(this ReadOnlySettings settings) =>
+        settings.GetOrDefault<RuntimeTypeModel>();
 
     /// <summary>
     /// Configures string to use for <see cref="Headers.ContentType"/> headers.
@@ -41,8 +39,6 @@ public static class ProtoBufConfigurationExtensions
         settings.Set("NServiceBus.ProtoBuf.ContentTypeKey", contentTypeKey);
     }
 
-    internal static string GetContentTypeKey(this ReadOnlySettings settings)
-    {
-        return settings.GetOrDefault<string>("NServiceBus.ProtoBuf.ContentTypeKey");
-    }
+    internal static string GetContentTypeKey(this ReadOnlySettings settings) =>
+        settings.GetOrDefault<string>("NServiceBus.ProtoBuf.ContentTypeKey");
 }

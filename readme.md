@@ -60,7 +60,7 @@ https://nuget.org/packages/NServiceBus.ProtoBuf/
 ```cs
 configuration.UseSerialization<ProtoBufSerializer>();
 ```
-<sup><a href='/src/Tests/Snippets/Usage.cs#L9-L13' title='Snippet source file'>snippet source</a> | <a href='#snippet-protobufserialization' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/src/Tests/Usage.cs#L9-L13' title='Snippet source file'>snippet source</a> | <a href='#snippet-protobufserialization' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 This serializer does not support [messages defined as interfaces](https://docs.particular.net/nservicebus/messaging/messages-as-interfaces). If an explicit interface is sent, an exception will be thrown with the following message:
@@ -85,7 +85,7 @@ model.IncludeDateTimeKind = true;
 var serialization = configuration.UseSerialization<ProtoBufSerializer>();
 serialization.RuntimeTypeModel(model);
 ```
-<sup><a href='/src/Tests/Snippets/Usage.cs#L18-L25' title='Snippet source file'>snippet source</a> | <a href='#snippet-protobufcustomsettings' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/src/Tests/Usage.cs#L18-L25' title='Snippet source file'>snippet source</a> | <a href='#snippet-protobufcustomsettings' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 
@@ -99,7 +99,7 @@ When using [additional deserializers](https://docs.particular.net/nservicebus/se
 var serialization = configuration.UseSerialization<ProtoBufSerializer>();
 serialization.ContentTypeKey("custom-key");
 ```
-<sup><a href='/src/Tests/Snippets/Usage.cs#L30-L35' title='Snippet source file'>snippet source</a> | <a href='#snippet-protobufcontenttypekey' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/src/Tests/Usage.cs#L30-L35' title='Snippet source file'>snippet source</a> | <a href='#snippet-protobufcontenttypekey' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 

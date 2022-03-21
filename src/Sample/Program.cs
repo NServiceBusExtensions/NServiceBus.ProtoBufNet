@@ -18,16 +18,6 @@ class Program
         };
         await endpoint.SendLocal(message);
 
-        await endpoint.ScheduleEvery(
-            timeSpan: TimeSpan.FromSeconds(5),
-            task: pipelineContext =>
-            {
-                var delayed = new MyMessage
-                {
-                    Name = "delayed",
-                };
-                return pipelineContext.SendLocal(delayed);
-            });
         Console.WriteLine("\r\nPress any key to stop program\r\n");
         Console.Read();
         await endpoint.Stop();

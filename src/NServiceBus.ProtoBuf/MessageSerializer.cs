@@ -1,6 +1,4 @@
-﻿using NServiceBus;
-using NServiceBus.ProtoBuf;
-using NServiceBus.Serialization;
+﻿using NServiceBus.Serialization;
 using ProtoBuf.Meta;
 
 class MessageSerializer :
@@ -37,29 +35,12 @@ class MessageSerializer :
             throw new("Interface based message are not supported. Create a class that implements the desired interface.");
         }
 
-#pragma warning disable CS0618
-        if (message is ScheduledTask task)
-#pragma warning restore CS0618
-        {
-            var wrapper = ScheduledTaskHelper.ToWrapper(task);
-            runtimeTypeModel.Serialize(stream, wrapper);
-        }
-        else
-        {
-            runtimeTypeModel.Serialize(stream, message);
-        }
+        runtimeTypeModel.Serialize(stream, message);
     }
 
     public object[] Deserialize(Stream stream, IList<Type> messageTypes)
     {
         var messageType = messageTypes.First();
-        if (messageType.IsScheduleTask())
-        {
-            var scheduledTaskWrapper = (ScheduledTaskWrapper)runtimeTypeModel.Deserialize(stream, null, ScheduledTaskHelper.WrapperType);
-            var scheduledTask = ScheduledTaskHelper.FromWrapper(scheduledTaskWrapper);
-            return new[] { scheduledTask };
-        }
-
         var message = runtimeTypeModel.Deserialize(stream, null, messageType);
         return new[] { message };
     }

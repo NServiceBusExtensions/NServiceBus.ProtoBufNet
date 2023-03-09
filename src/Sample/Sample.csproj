@@ -8,6 +8,6 @@
     <PackageReference Include="NServiceBus" Version="8.0.3" />
     <PackageReference Include="protobuf-net" Version="3.2.0" />
     <ProjectReference Include="..\NServiceBus.ProtoBuf\NServiceBus.ProtoBuf.csproj" />
-    <PackageReference Include="ProjectDefaults" Version="1.0.88" PrivateAssets="all" />
+    <PackageReference Include="ProjectDefaults" Version="1.0.89" PrivateAssets="all" />
   </ItemGroup>
 </Project>
